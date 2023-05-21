@@ -35,12 +35,12 @@ app.post("/", function(req, res){
 
             const icon = weatherData.weather[0].icon; // gets the icon tag
 
-            const imageURL = "https://openweathermap.org/img/wn/" + icon + "@2x.png"; // gets the image of the icon tag
-
-            res.write("<p>The weather is currently " + weatherDescription +"</p>" ); // to show on our website
+            const imageURL = "https://openweathermap.org/img/wn/" + icon + "@2x.png"; // gets the image of the icon 
 
             res.write("<h1>The temperature in " + query + " is "+ temp +" degrees Celcius.</h1>"); // only one res.send can be used so we used res.write for multiple times and then used res.send once to send our info to the website
 
+            res.write("<p>The weather is currently " + weatherDescription +"</p>" ); // to show on our website
+            
             res.write("<img src="+ imageURL +">");
             res.send();
             /*
